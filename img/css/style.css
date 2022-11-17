@@ -1,0 +1,82 @@
+/* General Rules */
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/* Header */
+header{
+    height: 100px;
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.logo{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    width: 500px;
+}
+
+    .logo > img{
+        width: 10%;
+    }
+
+    .logo > h1{
+    display: inline-block;
+    font-size: 35px;
+    }
+
+#play{
+    padding: 4px 30px;
+}
+
+/* Main Rules */
+main{
+    background-color: #7fffd4;
+    padding: 100px 0;
+    min-height: 100vh;
+}
+
+#container{
+    width: 60%;
+    margin: auto;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    border: 1px solid black;
+}
+
+.box{
+    border: 1px solid black;
+    width: calc(100% / 10);
+    height: 85px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.active{
+    background-color: lightblue;
+}
+
+/* Footer Ruòes */
+footer{
+    height: 80px;
+    padding: 0 20px;
+    font-size: 22px;
+    display: flex;
+    align-items: center;
+}
