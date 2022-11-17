@@ -7,6 +7,7 @@ const difficolta = document.getElementById("difficolta");
 const reset = document.getElementById("reset");
 const punteggio = document.getElementById("punteggio");
 let elements = document.getElementsByClassName("box");
+const esito = document.getElementById("esito");
 
 // Dichiariazione variabili
 let esploso = false;
@@ -29,12 +30,7 @@ genera.addEventListener("click",
             alert("Inserisci difficoltà per giocare");
 
         } else{
-            // Azzeramenti vari
-            genera.innerHTML = "Reset"
-            container.innerHTML = "";
-            score = 0;
-            punteggio.innerHTML = "Punteggio: " + score
-
+            azzera();
             sceltaDifficolta();
         }   
     }
@@ -47,10 +43,7 @@ function creaBox(nBox, modalita){
 
     difficolta.addEventListener("change",
         function(){
-            genera.innerHTML = "Reset"
-            container.innerHTML = "";
-            score = 0;
-            punteggio.innerHTML = "Punteggio: " + score
+            azzera();
             sceltaDifficolta();
         }        
     )
@@ -65,9 +58,8 @@ function creaBox(nBox, modalita){
         box.classList.add(modalita);
         container.append(box);
         box.innerHTML = i;
-        arrNum = bombNumber(1, 100, 16);
 
-
+        
         // Click sui numeri
         box.addEventListener("click",
             function(){
@@ -77,28 +69,25 @@ function creaBox(nBox, modalita){
 
                     // Se clicchi sulla cella "bomba" perdi
                     if (arrNum.includes(i)){  
-
                         // Mostriamo tutte le bombe
-                        for (let i = 0; i < nBox; i++){
-                            if (arrNum.includes(i)){
-                                elements[i].classList.add("bomba")
-                                console.log("ciao")
+                        for (let i = 1; i < nBox; i++){
+                            if (arrNum.includes(i + 1)){
+                                elements[i].classList.add("bomba");
                             }
                         }
-                        
+                        esito.innerHTML = "Hai Perso!"
                         esploso = true;
                         score = 0;
-                        alert("Hai perso! Resetta la parita per continuare");
 
+                    // ALtrimenti Se la cella selezionata non lo è già
                     }  else if (box.classList[2] != "safe") {
-                        // ALtrimenti Se la cella selezionata non lo è già
                         box.classList.add("safe");
                         score += 1;
                         punteggio.innerHTML = "Punteggio: " + score;
 
                         // Se tutte le celle safe sono selezionate vinci
                         if (score === nBox - arrNum.length){
-                            alert("Hai vinto!")
+                            esito.innerHTML = "Hai Vinto!"
                         }
                     }    
                 }
@@ -107,6 +96,7 @@ function creaBox(nBox, modalita){
     }
 }
 
+// Funzione per la scelta della difficoltà
 function sceltaDifficolta(){
     // Controllo difficoltà
     if (difficolta.value === "facile"){
@@ -137,4 +127,15 @@ function bombNumber (numMin, numMax, quantity){
         }
     }
     return arrNum;
+}
+
+function azzera(){
+    genera.innerHTML = "Reset"
+    container.innerHTML = "";
+    esito.innerHTML = "";
+    esploso = false;
+    score = 0;
+    punteggio.innerHTML = "Punteggio: " + score;
+    arrNum = [];
+    arrNum = bombNumber(1, 100, 16);
 }

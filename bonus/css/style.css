@@ -68,7 +68,7 @@ span{
 /* Main Rules */
 main{
     background-color: #7fffd4;
-    padding: 100px 0;
+    padding-bottom: 90px;
     min-height: 100vh;
     position: relative;
 }
@@ -107,6 +107,19 @@ main{
         height: 120px;
     }
 
+
+.stato-partita{
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#esito{
+    text-align: center;
+    font-size: 40px;
+    text-decoration: underline;
+}
 
 #punteggio{
     position: absolute;

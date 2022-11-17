@@ -4,6 +4,7 @@
 const container = document.getElementById("container");
 const genera = document.getElementById("play");
 const punteggio = document.getElementById("punteggio");
+const esito = document.getElementById("esito");
 
 // Dichiariazione variabili
 let esploso = false;
@@ -21,6 +22,10 @@ genera.addEventListener("click",
         container.innerHTML = "";
         score = 0;
         punteggio.innerHTML = "Punteggio: " + score
+        esito.innerHTML = "";
+        esploso = false;
+        arrNum = [];
+        arrNum = bombNumber(1, 100, 16);
 
          // Rendere visibile container
         container.style.display = "flex";
@@ -31,7 +36,6 @@ genera.addEventListener("click",
             box.classList.add("box");
             container.append(box);
             box.innerHTML = i;
-            arrNum = bombNumber(1, 100, 16);
 
 
             // Click sui numeri
@@ -46,9 +50,9 @@ genera.addEventListener("click",
                             box.classList.add("bomba");
                             esploso = true;
                             score = 0;
-                            alert("Hai perso! Resetta la parita per continuare");
+                            esito.innerHTML = "Hai Perso!"
 
-                        }  else if (box.classList[2] != "safe") {
+                        }  else if (box.classList[1] != "safe") {
                             // ALtrimenti Se la cella selezionata non lo è già
                             box.classList.add("safe");
                             score += 1;
@@ -56,7 +60,7 @@ genera.addEventListener("click",
 
                             // Se tutte le celle safe sono selezionate vinci
                             if (score === 100 - arrNum.length){
-                                alert("Hai vinto!")
+                                esito.innerHTML = "Hai Vinto!"
                             }
                         }  
                     }  
