@@ -1,4 +1,4 @@
-// l'utente cliccando un bottone genererà una griglia 10x10 con dei numeri da 1 a 100, l'utente cliccando su di esse le colorerà di azzurro
+// l'utente cliccando un bottone genererà una griglia in base alla difficoltà scelta, se clicca sulla cella giusta diventerà blu e guadagnerà un punto, altrimenti diventa rossa e perderà
 
 // Manipolazione DOM
 const container = document.getElementById("container");
