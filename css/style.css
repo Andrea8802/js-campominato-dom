@@ -9,7 +9,6 @@ body{
     font-family: Arial, Helvetica, sans-serif;
 }
 
-
 /* Header */
 header{
     height: 100px;
@@ -71,6 +70,7 @@ main{
     background-color: #7fffd4;
     padding: 100px 0;
     min-height: 100vh;
+    position: relative;
 }
 
 #container{
@@ -85,7 +85,6 @@ main{
 
 .box{
     border: 1px solid black;
-    
     display: flex;
     justify-content: center;
     align-items: center;
@@ -108,8 +107,13 @@ main{
         height: 120px;
     }
 
-.active{
-    background-color: lightblue;
+
+#punteggio{
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 20px;
+    font-weight: bold;
 }
 
 /* Footer Ruòes */
@@ -126,10 +130,12 @@ footer a{
 }
 
 .bomba{
-    background-color: red;
+    background-color: #850606;
+    color: white;
 }
 
 
 .safe{
-    background-color: blue;
+    background-color: #16166d;
+    color: white;
 }
