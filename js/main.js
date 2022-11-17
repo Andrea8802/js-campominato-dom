@@ -5,7 +5,7 @@ const container = document.getElementById("container");
 const genera = document.getElementById("play");
 const difficolta = document.getElementById("difficolta");
 const reset = document.getElementById("reset");
-const elements = document.getElementsByClassName("box");
+let elements = document.getElementsByClassName("box");
 
 // Array
 let arrNum = [];
@@ -46,26 +46,24 @@ function creaBox(nBox, modalita){
      // Rendere visibile container
      container.style.display = "flex";
 
-     // Stampiamo 100 celle
+     // Stampiamo le celle
     for(let i = 1; i <= nBox; i++){
-
         const box = document.createElement("div");
         box.classList.add("box");
         box.classList.add(modalita);
         container.append(box);
         box.innerHTML = i;
-        arrNum = bombNumber(1, 16, 16);
+        arrNum = bombNumber(1, 100, 16);
+
         // Click sui numeri
         box.addEventListener("click",
             function(){
                 console.log(i);
-               
-                if (elements[i] === arrNum[i]){
+                if(arrNum.includes(i)){
                     box.classList.add("bomba");
-
-                } else if (elements[i] != arrNum[i]){
+                } else{
                     box.classList.add("safe");
-                }
+                }    
             }
         )
     }
