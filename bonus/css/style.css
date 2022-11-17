@@ -84,8 +84,6 @@ main{
 }
 
 .box{
-    width: calc(100% / 10);
-    height: 85px;
     border: 1px solid black;
     display: flex;
     justify-content: center;
@@ -93,6 +91,21 @@ main{
     font-size: 30px;
     cursor: pointer;
 }
+
+    .facile{
+        width: calc(100% / 10);
+        height: 85px;
+    }
+
+    .normale{
+        width: calc(100% / 9);
+        height: 90px;
+    }
+
+    .difficile{
+        width: calc(100% / 7);
+        height: 120px;
+    }
 
 
 #punteggio{
