@@ -70,8 +70,8 @@ function creaBox(nBox, modalita){
                     // Se clicchi sulla cella "bomba" perdi
                     if (arrNum.includes(i)){  
                         // Mostriamo tutte le bombe
-                        for (let i = 1; i < nBox; i++){
-                            if (arrNum.includes(i + 1)){
+                        for (let i = 0; i < nBox; i++){
+                            if (arrNum.includes(i)){
                                 elements[i].classList.add("bomba");
                             }
                         }
@@ -132,6 +132,7 @@ function bombNumber (numMin, numMax, quantity){
     return arrNum;
 }
 
+// Funzioni per azzerare valori o output
 function azzera(){
     genera.innerHTML = "Reset"
     container.innerHTML = "";
