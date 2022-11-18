@@ -145,6 +145,16 @@ main{
     animation: opacity 0.5s ease;
 }
 
+    .vittoria{
+        color: lime;
+        text-shadow: 1px 1px 0px black;
+    }
+
+    .sconfitta{
+        color: red;
+        text-shadow: 1px 1px 0px black;
+    }
+
 #punteggio{
     position: absolute;
     top: 20px;

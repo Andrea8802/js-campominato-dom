@@ -75,6 +75,7 @@ function creaBox(nBox, modalita){
                                 elements[i].classList.add("bomba");
                             }
                         }
+                        esito.classList.add("sconfitta");
                         esito.innerHTML = "Hai Perso!"
                         esploso = true;
                         score = 0;
@@ -87,7 +88,9 @@ function creaBox(nBox, modalita){
 
                         // Se tutte le celle safe sono selezionate vinci
                         if (score === nBox - arrNum.length){
-                            esito.innerHTML = "Hai Vinto!"
+                            esito.classList.add("vittoria");
+                            esito.innerHTML = "Hai Vinto!";
+                            
                         }
                     }    
                 }
