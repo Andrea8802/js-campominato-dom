@@ -80,7 +80,6 @@ main{
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    border: 1px solid black;
     opacity: 1;
     animation: opacity 0.5s ease;
 }
@@ -101,18 +100,18 @@ main{
 }
 
     .facile{
-        width: calc(100% / 10);
-        height: 85px;
+        width: 75px;
+        height: 75px;
     }
 
     .normale{
-        width: calc(100% / 9);
-        height: 90px;
+        width: 80px;
+        height: 80px;
     }
 
     .difficile{
-        width: calc(100% / 7);
-        height: 120px;
+        width: 100px;
+        height: 100px;
     }
 
 

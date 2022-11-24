@@ -72,7 +72,7 @@ function creaBox(nBox, modalita){
                         // Mostriamo tutte le bombe
                         for (let i = 0; i < nBox; i++){
                             if (arrNum.includes(i)){
-                                elements[i].classList.add("bomba");
+                                elements[(i - 1)].classList.add("bomba");
                             }
                         }
                         esito.classList.add("sconfitta");
